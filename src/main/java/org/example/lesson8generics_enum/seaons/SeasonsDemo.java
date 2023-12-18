@@ -11,7 +11,7 @@ public class SeasonsDemo {
 
         /*Написать метод, который выводит следующий сезон от заданного во входном параметре.
          * Входной параметр ввести с клавиатуры*/
-//        Seasons.printNextSeason(getSeason());
+        Seasons.printNextSeason(getSeason());
 
         /*Написать метод, который в зависимости от сезона, выводит на экран сумму дней в этом сезоне.
          * Входной параметр ввести с клавиатуры*/
@@ -23,19 +23,17 @@ public class SeasonsDemo {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Input season: ");
-            if (scanner.hasNextLine()) {
-                String seasonName = scanner.nextLine();
-                if (checkInputSeason(seasonName.toUpperCase())) {
-                    return Seasons.valueOf(seasonName.toUpperCase());
-                } else {
-                    for (Seasons s : Seasons.values()) {
-                        if (s.getDescription().equalsIgnoreCase(seasonName)){
-                            return s;
-                        }
+            String seasonName = scanner.nextLine();
+            if (checkInputSeason(seasonName.toUpperCase())) {
+                return Seasons.valueOf(seasonName.toUpperCase());
+            } else {
+                for (Seasons s : Seasons.values()) {
+                    if (s.getDescription().equalsIgnoreCase(seasonName)) {
+                        return s;
                     }
                 }
-                System.out.println("There is no such season!");
             }
+            System.out.println("There is no such season!");
         }
     }
 
