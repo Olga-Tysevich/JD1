@@ -7,6 +7,6 @@ public class Worker extends Employee{
 
     @Override
     public void calculateSalary() {
-        System.out.println("Отдел: " + getDepartment() + ", рабочий: Зарплата в процентах");
+        System.out.println("Отдел: " + getDepartment() + ", рабочий: процентная зарплата");
     }
 }

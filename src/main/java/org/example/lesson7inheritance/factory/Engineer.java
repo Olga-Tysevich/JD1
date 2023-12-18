@@ -2,7 +2,7 @@ package org.example.lesson7inheritance.factory;
 
 public class Engineer extends Employee{
     public Engineer() {
-        super("Engineering department");
+        super("Инженерный отдел");
     }
 
     @Override
