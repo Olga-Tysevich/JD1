@@ -6,7 +6,7 @@ import java.util.Random;
 public class Main {
     public static final int LIST_SIZE = 10;
     public static final int ARRAY_SIZE = 10;
-    public static final String OUT_FILE_PATH = "src/main/java/org/example/lesson12thread/file$.txt";
+    public static final String OUT_FILE_PATH = "src/main/java/org/example/lesson12thread/file.txt";
 
     public static void main(String[] args) {
         /*Создать 10 потоков, каждый из которых вычисляет среднее арифметическое
@@ -28,7 +28,7 @@ public class Main {
         /*Создать класс поток, который создает средствами Java файл и записать в него произвольно сгенерированный
          * массив из 10 случайных чисел. Запустить 5 потоков*/
         for (int i = 0; i < 5; i++) {
-            new FileThread(ARRAY_SIZE, OUT_FILE_PATH.replace("$", String.valueOf(i))).start();
+            new FileThread(ARRAY_SIZE, OUT_FILE_PATH).start();
         }
     }
 }

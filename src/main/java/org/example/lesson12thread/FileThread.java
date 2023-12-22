@@ -19,7 +19,7 @@ public class FileThread extends Thread {
     public void run() {
         randomArray = new Random().ints(arraySize, 0, 101).toArray();
         try (PrintWriter writer = new PrintWriter(
-                new FileWriter(outFilePath))) {
+                new FileWriter(outFilePath, true))) {
             for (int n : randomArray) {
                 writer.println(n);
             }
