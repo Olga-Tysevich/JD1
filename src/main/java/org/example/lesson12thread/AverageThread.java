@@ -1,8 +1,6 @@
 package org.example.lesson12thread;
 
 import java.util.List;
-import java.util.Random;
-
 public class AverageThread extends Thread{
     private List<Integer> numbers;
 
@@ -12,6 +10,6 @@ public class AverageThread extends Thread{
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + ":\n" + numbers);
-        System.out.println(Thread.currentThread().getName() +", average: " + (double) numbers.stream().reduce(Integer::sum).orElse(0) / numbers.size());
+        System.out.println(Thread.currentThread().getName() +", average: " + (double) numbers.stream().reduce(Integer::sum).orElse(-1) / numbers.size());
     }
 }

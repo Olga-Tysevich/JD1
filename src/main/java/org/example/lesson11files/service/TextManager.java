@@ -21,7 +21,7 @@ public class TextManager {
     public List<Double> findNumbers(List<String> strings) {
         List<String> filteredStrings = findMatches(ANY_NUMBER, strings);
         List<Double> numbers = new ArrayList<>();
-        filteredStrings.forEach(e -> numbers.add(Double.parseDouble(e.replace(NUMBER_SEPARATOR_RUS, NUMBER_SEPARATOR_US))));
+        filteredStrings.forEach(e -> numbers.add(Double.parseDouble(e.replace(THOUSANDS_SEPARATOR, ""))));
        return numbers;
     }
 
