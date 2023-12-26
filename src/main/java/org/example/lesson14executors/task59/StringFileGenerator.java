@@ -31,9 +31,9 @@ public class StringFileGenerator implements Callable<List<String>> {
     private void writeFile(File file) {
         try (PrintWriter printWriter = new PrintWriter(file)) {
             IntStream.range(0, NUMBER_OF_STRINGS)
-                    .mapToObj(n -> Thread.currentThread().getName() + ": string-" + new Random().nextInt())
+                    .mapToObj(n -> "String-" + new Random().nextInt())
                     .peek(printWriter::println)
-                    .forEach(s -> System.out.println(Thread.currentThread().getName() + " wrote string:" + s + " to file:" + file));
+                    .forEach(s -> System.out.println(Thread.currentThread().getName() + " wrote:" + s + " to file:" + file.getName()));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
