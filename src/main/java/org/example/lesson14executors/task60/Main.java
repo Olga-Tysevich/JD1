@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import static org.example.lesson14executors.task60.Constants.NUMBER_OF_TASKS;
 import static org.example.lesson14executors.task60.Constants.NUMBER_OF_THREADS;
@@ -16,15 +17,19 @@ public class Main {
          * Вывести ход программы на экран с указанием имени потока, который выполняет работу*/
         ExecutorService service = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-        List<String> strings = new ArrayList<>();
+        List<Future<String>> strings = new ArrayList<>();
+        for (int i = 0; i < NUMBER_OF_TASKS; i++) {
+            strings.add(service.submit(new Generator()));
+        }
+        service.close();
+
         try {
-            for (int i = 0; i < NUMBER_OF_TASKS; i++) {
-                strings.add(service.submit(new Generator()).get());
+            for (Future<String> f : strings) {
+                System.out.print("sum: " + f.get() + ", ");
             }
+            System.out.println("\nSize: " + strings.size());
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
-        service.close();
-        System.out.println(strings + "\n" + ", size: " + strings.size());
     }
 }
