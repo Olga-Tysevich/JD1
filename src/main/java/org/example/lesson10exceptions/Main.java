@@ -7,18 +7,21 @@ public class Main {
          * которое будет содержать описание данного исключения*/
         Notebook notebook = new Notebook();
         notebook.createNote("1", null);
-        try{
+        try {
             String text = notebook.getNote(0).getText();
             System.out.println(text.length());
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.out.println("Exception: " + e.getClass().getSimpleName());
             System.out.println("Cause: " + e.getMessage());
         }
+
         /*Написать собственное исключение. Сгенерировать код, который будет его выбрасывать и обрабатывать.
          * Результат работы вывести на экран*/
         notebook.createNote("", "text");
+
         /*Написать метод, который будет возбуждать исключение и обработать это исключение на уровне выше.
          * Результат вывести на экран*/
+
         try {
             notebook.findNotes("test");
         } catch (NotebookException e) {
