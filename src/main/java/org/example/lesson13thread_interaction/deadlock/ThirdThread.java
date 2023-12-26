@@ -1,21 +1,21 @@
 package org.example.lesson13thread_interaction.deadlock;
 
 public class ThirdThread extends Thread{
-    Collage collage;
+    Resources resources;
 
-    public ThirdThread(Collage collage) {
+    public ThirdThread(Resources resources) {
         super("ThirdThread");
-        this.collage = collage;
+        this.resources = resources;
     }
 
     @Override
     public void run() {
-        synchronized (collage.getScissors()) {
-            System.out.println(Thread.currentThread().getName() + " took: " + collage.getScissors());
-            synchronized (collage.getColorPaper()) {
-                System.out.println(Thread.currentThread().getName() + " took: " + collage.getColorPaper());
-                synchronized (collage.getColorPaper()) {
-                    System.out.println(Thread.currentThread().getName() + " took: " + collage.getScissors());
+        synchronized (resources.getThird()) {
+            System.out.println(Thread.currentThread().getName() + " received: " + resources.getThird());
+            synchronized (resources.getFirst()) {
+                System.out.println(Thread.currentThread().getName() + " received: " + resources.getFirst());
+                synchronized (resources.getFirst()) {
+                    System.out.println(Thread.currentThread().getName() + " received: " + resources.getThird());
                 }
             }
         }

@@ -17,6 +17,5 @@ public class Main {
         producer3.start();
         consumer1.start();
         consumer2.start();
-
     }
 }
