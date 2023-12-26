@@ -18,8 +18,8 @@ public class StringFileGenerator implements Callable<List<String>> {
     @Override
     public List<String> call() throws InterruptedException {
         List<String> fileNames = Stream.generate(() ->
-                        new File(OUT_DIRECTORY + OUT_FILE_NAME.replace("$1", Thread.currentThread().getName())
-                                .replace("$2", String.valueOf(new Random().nextInt()))))
+                        new File(OUT_DIRECTORY + OUT_FILE_NAME.replace(THREAD_NAME_MARKER, Thread.currentThread().getName())
+                                .replace(FILE_NUMBER_MARKER, String.valueOf(new Random().nextInt()))))
                 .limit(NUMBER_OF_FILES)
                 .peek(this::writeFile)
                 .map(File::getName)
