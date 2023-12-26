@@ -21,9 +21,8 @@ public class Main {
 
         /*Написать метод, который будет возбуждать исключение и обработать это исключение на уровне выше.
          * Результат вывести на экран*/
-
         try {
-            notebook.findNotes("test");
+            System.out.println(notebook.findNotes("test"));
         } catch (NotebookException e) {
             System.out.println("Exception: " + e.getClass().getSimpleName());
             System.out.println("Cause: " + e.getMessage());
