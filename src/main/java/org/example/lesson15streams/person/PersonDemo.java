@@ -2,7 +2,6 @@ package org.example.lesson15streams.person;
 
 import org.example.lesson11files.person.Names;
 import org.example.lesson11files.person.Surnames;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
