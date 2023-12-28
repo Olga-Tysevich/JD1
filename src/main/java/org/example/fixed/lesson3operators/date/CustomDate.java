@@ -10,63 +10,63 @@ public class CustomDate {
     private final int year;
 
     public CustomDate(int day, int month, int year) {
-        if (year > 0 && month > 0 && month <= MONTH_IN_YEAR && checkDay(day, month, year)) {
+        if (year > 0 && month >= FIRST_MONTH_OF_YEAR && month <= MONTHS_PER_YEAR && checkDay(day, month, year)) {
             this.year = year;
             this.day = day;
             this.month = month;
         } else if (year <= 0) {
-            throw new DateTimeException("Incorrect year specified!");
+            throw new DateTimeException(INVALID_YEAR_MESSAGE);
         } else if (month <= 0) {
-            throw new DateTimeException("Incorrect month specified!");
+            throw new DateTimeException(INVALID_MONTH_MESSAGE);
         } else {
-            throw new DateTimeException("Incorrect day specified!");
+            throw new DateTimeException(INVALID_DAY_MESSAGE);
         }
     }
 
     public void printNextDay() {
 
         switch (month) {
-            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> changeDay(31);
+            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> changeDay(LAST_DAY_OF_MONTH_31);
             case FEBRUARY -> {
                 if (isLeapYear(year)) {
-                    changeDay(29);
+                    changeDay(LAST_DAY_OF_FEBRUARY_LEAP_YEAR);
                 } else {
-                    changeDay(28);
+                    changeDay(LAST_DAY_OF_FEBRUARY);
                 }
             }
-            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> changeDay(30);
+            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> changeDay(LAST_DAY_OF_MONTH_30);
         }
     }
 
     private void changeDay(int lastDayOfMonth) {
         int day = this.day, month = this.month, year = this.year;
-        if (day == lastDayOfMonth && month != MONTH_IN_YEAR) {
-            day = 1;
+        if (day == lastDayOfMonth && month != MONTHS_PER_YEAR) {
+            day = FIRST_DAY_OF_MONTH;
             month++;
         } else if (day == lastDayOfMonth) {
-            day = 1;
-            month = 1;
+            day = FIRST_DAY_OF_MONTH;
+            month = FIRST_MONTH_OF_YEAR;
             year++;
         } else {
            day++;
         }
-        System.out.printf("%02d.%02d.%d", day, month, year);
+        System.out.printf(DATE_PATTERN, day, month, year);
     }
 
     private boolean checkDay(int day, int month, int year) {
         switch (month) {
             case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> {
-                return day > 0 && day <= 31;
+                return day >= FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_MONTH_31;
             }
             case FEBRUARY -> {
                 if (isLeapYear(year)) {
-                    return day > 0 && day <= 29;
+                    return day >= FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_FEBRUARY_LEAP_YEAR;
                 } else {
-                    return day > 0 && day <= 28;
+                    return day >= FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_FEBRUARY;
                 }
             }
             case APRIL, JUNE, SEPTEMBER, NOVEMBER -> {
-                return day > 0 && day <= 30;
+                return day > FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_MONTH_30;
             }
             default -> {
                 return false;
@@ -75,12 +75,12 @@ public class CustomDate {
     }
 
     private boolean isLeapYear(int year) {
-        if (year % FIST_DIVISOR_DETERMINING_LEAP_YEAR == 0) {
+        if (year % DIVISOR_DETERMINING_LEAP_YEAR_400 == 0) {
             return true;
-        } else if (year % SECOND_DIVISOR_DETERMINING_LEAP_YEAR == 0) {
+        } else if (year % DIVISOR_DETERMINING_LEAP_YEAR_100 == 0) {
             return false;
         } else {
-            return year % THIRD_DIVISOR_DETERMINING_LEAP_YEAR == 0;
+            return year % DIVISOR_DETERMINING_LEAP_YEAR_4 == 0;
         }
     }
 }
