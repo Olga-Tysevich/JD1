@@ -2,10 +2,10 @@ package org.example.fixed.lesson2variables;
 
 
 public class Main {
-    public static final int SEC_IN_MIN = 60;
-    public static final int MIN_IN_HOUR = 60;
-    public static final int HOUR_IN_DAY = 24;
-    public static final int DAY_IN_WEEK = 7;
+    private static final int SEC_IN_MIN = 60;
+    private static final int MIN_IN_HOUR = 60;
+    private static final int HOUR_IN_DAY = 24;
+    private static final int DAY_IN_WEEK = 7;
 
     public static void main(String[] args) {
         /* Написать метод, который принимает на вход два целых числа, делает их суммиирование,
