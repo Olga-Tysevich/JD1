@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.function.IntPredicate;
 
 public class IntListDemo {
-    public static final int MIN_VALUE = 1;
-    public static final int MAX_VALUE = 1001;
-    public static final int LIST_SIZE = 500;
-    public static final IntPredicate MULTIPLE_OF_3_AND_5 = n -> n % 3 == 0 && n % 5 == 0;
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 1001;
+    private static final int LIST_SIZE = 500;
+    private static final IntPredicate MULTIPLE_OF_3_AND_5 = n -> n % 3 == 0 && n % 5 == 0;
 
     public static void main(String[] args) {
         /*Сгенерировать List коллекцию целых чисел из n элементов от minValue до maxValue.

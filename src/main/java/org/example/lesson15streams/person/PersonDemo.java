@@ -2,18 +2,16 @@ package org.example.lesson15streams.person;
 
 import org.example.lesson11files.person.Names;
 import org.example.lesson11files.person.Surnames;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class PersonDemo {
-    public static final int GROUP_SIZE = 100;
-    public static final int MIN_AGE = 15;
-    public static final int RANDOM_AGE_RANGE = 16;
-    public static final int REQUIRED_NUMBER_OF_PERSONS = 4;
-    public static final Predicate<Person> PERSON_UNDER_21 = p -> p.getAge() < 21;
+    private static final int GROUP_SIZE = 100;
+    private static final int MIN_AGE = 15;
+    private static final int RANDOM_AGE_RANGE = 16;
+    private static final int REQUIRED_NUMBER_OF_PERSONS = 4;
+    private static final Predicate<Person> PERSON_UNDER_21 = p -> p.getAge() < 21;
 
     public static void main(String[] args) {
         /*Создайте класс Person с полями name, surname, age. Сгенерируйте группу из 100 человек

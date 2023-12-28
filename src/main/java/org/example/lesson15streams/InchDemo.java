@@ -4,10 +4,10 @@ import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 public class InchDemo {
-    public static final double CM_IN_INCH = 2.54;
-    public static final int MIN_INCH_VALUE = 1;
-    public static final int MAX_INCH_VALUE = 20;
-    public static final IntPredicate EVEN_NUMBER = n -> n % 2 == 0;
+    private static final double CM_IN_INCH = 2.54;
+    private static final int MIN_INCH_VALUE = 1;
+    private static final int MAX_INCH_VALUE = 20;
+    private static final IntPredicate EVEN_NUMBER = n -> n % 2 == 0;
 
     public static void main(String[] args) {
         /*Напишите программу, которая для всех четных значений длинной от 1 до 20 дюймов:
