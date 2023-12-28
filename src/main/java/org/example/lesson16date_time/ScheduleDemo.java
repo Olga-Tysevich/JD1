@@ -1,5 +1,6 @@
 package org.example.lesson16date_time;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,6 +10,7 @@ public class ScheduleDemo {
     private static final int DURATION_IN_MONTHS = 2;
     private static final int DAYS_UNTIL_NEXT_MEETING = 7;
     private static final String DATE_TIME_PATTERN = "dd::MMMM::yyyy HH:mm";
+    private static final int DAYS_BEFORE_CURRENT = 60;
 
     public static void main(String[] args) {
         /*От текущей даты вывести расписание всех встреч, которые происходят еженедельно
@@ -19,5 +21,9 @@ public class ScheduleDemo {
             System.out.println(meetingDate.format(DateTimeFormatter.ofPattern(DATE_TIME_PATTERN)));
             meetingDate = meetingDate.plusDays(DAYS_UNTIL_NEXT_MEETING);
         } while (meetingDate.isBefore(finishDate));
+
+        //От текущей даты вывести на экран дату, которая была 60 дней назад
+        LocalDate currentDate = LocalDate.now();
+        System.out.println(currentDate.minusDays(DAYS_BEFORE_CURRENT));
     }
 }
