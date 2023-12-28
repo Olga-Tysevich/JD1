@@ -5,10 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MonthDemo {
-    public static final String DATE_PATTERN = "d::MMM::uuuu";
-    public static final int FIRST_DAY_OF_MONTH = 1;
-    public static final int MIN_MONTH_NUMBER = 1;
-    public static final int MAX_MONTH_NUMBER = 12;
+    private static final String DATE_PATTERN = "d::MMM::uuuu";
+    private static final int FIRST_DAY_OF_MONTH = 1;
+    private static final int MIN_MONTH_NUMBER = 1;
+    private static final int MAX_MONTH_NUMBER = 12;
     public static void main(String[] args) {
         /*Ввести с клавиатуры номер месяца текущего года.
         Вывести на экран все его даты в формате d::MMM::uuuu*/
