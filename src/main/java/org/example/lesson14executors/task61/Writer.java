@@ -9,9 +9,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Writer {
-    public static final String OUT_FILE_PATH = "src/main/java/org/example/lesson14executors/task61/file.txt";
-    public static final int NUMBER_OF_TASKS = 10;
-    public static final int NUMBER_OF_THREADS = 3;
+    private final String OUT_FILE_PATH = "src/main/java/org/example/lesson14executors/task61/file.txt";
+    private static final int NUMBER_OF_TASKS = 10;
+    private static final int NUMBER_OF_THREADS = 3;
 
     public static void main(String[] args) {
         /*Создать задачу Callable, которая берет сообщение "Hello world" + текущее время и записывает его в файл.
