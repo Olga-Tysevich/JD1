@@ -9,6 +9,7 @@ public class MonthDemo {
     private static final int FIRST_DAY_OF_MONTH = 1;
     private static final int MIN_MONTH_NUMBER = 1;
     private static final int MAX_MONTH_NUMBER = 12;
+
     public static void main(String[] args) {
         /*Ввести с клавиатуры номер месяца текущего года.
         Вывести на экран все его даты в формате d::MMM::uuuu*/
