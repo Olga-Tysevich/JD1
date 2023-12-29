@@ -68,7 +68,7 @@ public class FilesDemo {
         try {
             writer.writeToFile(directoryManager.getFilesList(DIRECTORY_PATH), DIRECTORY_PATH + FILE_LIST_NAME, false);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }

@@ -11,9 +11,9 @@ import java.util.Random;
  * со случайными полями соответствующего типа.
  * С помощью Java создать файл, в который запишется информация о этих людях*/
 public class PersonDemo {
-    public static final String FILE_PATH = "src/main/java/org/example/lesson11files/person/Persons.txt";
-    public static final int PERSON_LIST_SIZE = 10;
-    public static final int MAX_PERSON_AGE = 100;
+    private static final String FILE_PATH = "src/main/java/org/example/lesson11files/person/Persons.txt";
+    private static final int PERSON_LIST_SIZE = 10;
+    private static final int MAX_PERSON_AGE = 100;
 
     public static void main(String[] args) {
         List<Person> personList = generatePersons(PERSON_LIST_SIZE);
