@@ -12,7 +12,7 @@ public class ThirdThread extends Thread{
     public void run() {
         synchronized (resources.getThird()) {
             System.out.println(Thread.currentThread().getName() + " received: " + resources.getThird());
-            synchronized (resources.getFirst()) {
+            synchronized (resources.getSecond()) {
                 System.out.println(Thread.currentThread().getName() + " received: " + resources.getFirst());
                 synchronized (resources.getFirst()) {
                     System.out.println(Thread.currentThread().getName() + " received: " + resources.getThird());
