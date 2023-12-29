@@ -1,9 +1,9 @@
 package org.example.lesson7inheritance.appliances.kitchen;
 
-import org.example.lesson7inheritance.appliances.Appliances;
+import org.example.lesson7inheritance.appliances.Appliance;
 import org.example.lesson7inheritance.appliances.AppliancesCategory;
 
-public class Fridge extends Appliances {
+public class Fridge extends Appliance {
     private int totalUsableVolume;
 
     public Fridge(AppliancesCategory category, String brand, double price, int totalUsableVolume) {

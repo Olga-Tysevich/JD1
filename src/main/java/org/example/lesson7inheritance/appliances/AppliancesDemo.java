@@ -23,7 +23,7 @@ public class AppliancesDemo {
          * Создать несколько объектов описанных классов, часть из них включить. Иерархия должна иметь хотя бы 3 уровня*/
 
 
-        List<Appliances> appliances = new ArrayList<>();
+        List<Appliance> appliances = new ArrayList<>();
 
         appliances.add(new Fridge(KITCHEN_APPLIANCES, "LG", 2700, 300));
         appliances.add(new Fridge(KITCHEN_APPLIANCES, "SAMSUNG", 5100, 400));
@@ -49,9 +49,9 @@ public class AppliancesDemo {
         turnOnSomeAppliances(appliances);
     }
 
-    public static void turnOnSomeAppliances(List<Appliances> appliances) {
+    public static void turnOnSomeAppliances(List<Appliance> appliances) {
         int random;
-        for (Appliances a : appliances) {
+        for (Appliance a : appliances) {
             random = new Random().nextInt(101);
             a.turnOn(random % 2 == 0);
             System.out.println(a);

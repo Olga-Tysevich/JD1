@@ -1,12 +1,12 @@
 package org.example.lesson7inheritance.appliances;
 
-public abstract class Appliances {
+public abstract class Appliance {
     private AppliancesCategory category;
     private String brand;
     private double price;
     private boolean isOn;
 
-    public Appliances(AppliancesCategory category, String brand, double price) {
+    public Appliance(AppliancesCategory category, String brand, double price) {
         this.category = category;
         this.brand = brand;
         this.price = price;

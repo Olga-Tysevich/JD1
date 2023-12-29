@@ -1,9 +1,9 @@
 package org.example.lesson7inheritance.appliances.watch;
 
-import org.example.lesson7inheritance.appliances.Appliances;
+import org.example.lesson7inheritance.appliances.Appliance;
 import org.example.lesson7inheritance.appliances.AppliancesCategory;
 
-public class AlarmClock extends Appliances {
+public class AlarmClock extends Appliance {
     private AlarmClockType type;
 
     public AlarmClock(AppliancesCategory category, String brand, double price, AlarmClockType type) {
