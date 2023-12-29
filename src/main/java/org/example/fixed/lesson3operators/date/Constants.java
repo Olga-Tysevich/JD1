@@ -17,14 +17,14 @@ public class Constants {
     protected static final int OCTOBER = 10;
     protected static final int NOVEMBER = 11;
     protected static final int DECEMBER = 12;
-    protected static final int MONTHS_PER_YEAR = 12;
+    protected static final int LAST_MONTH_OF_YEAR = 12;
     protected static final int LAST_DAY_OF_MONTH_31 = 31;
     protected static final int LAST_DAY_OF_MONTH_30 = 30;
     protected static final int LAST_DAY_OF_FEBRUARY = 28;
     protected static final int LAST_DAY_OF_FEBRUARY_LEAP_YEAR = 29;
-    protected static final int DIVISOR_DETERMINING_LEAP_YEAR_400 = 400;
-    protected static final int DIVISOR_DETERMINING_LEAP_YEAR_100 = 100;
-    protected static final int DIVISOR_DETERMINING_LEAP_YEAR_4 = 4;
+    protected static final int DIVISOR_LEAP_YEAR_400 = 400;
+    protected static final int DIVISOR_LEAP_YEAR_100 = 100;
+    protected static final int DIVISOR_LEAP_YEAR_4 = 4;
     protected static final int FIRST_DAY_OF_MONTH = 1;
     protected static final int FIRST_MONTH_OF_YEAR = 1;
 

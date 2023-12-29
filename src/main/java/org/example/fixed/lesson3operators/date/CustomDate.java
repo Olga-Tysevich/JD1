@@ -10,7 +10,7 @@ public class CustomDate {
     private final int year;
 
     public CustomDate(int day, int month, int year) {
-        if (year > 0 && month >= FIRST_MONTH_OF_YEAR && month <= MONTHS_PER_YEAR && checkDay(day, month, year)) {
+        if (year > 0 && month >= FIRST_MONTH_OF_YEAR && month <= LAST_MONTH_OF_YEAR && checkDay(day, month, year)) {
             this.year = year;
             this.day = day;
             this.month = month;
@@ -40,7 +40,7 @@ public class CustomDate {
 
     private void changeDay(int lastDayOfMonth) {
         int day = this.day, month = this.month, year = this.year;
-        if (day == lastDayOfMonth && month != MONTHS_PER_YEAR) {
+        if (day == lastDayOfMonth && month != LAST_MONTH_OF_YEAR) {
             day = FIRST_DAY_OF_MONTH;
             month++;
         } else if (day == lastDayOfMonth) {
@@ -75,12 +75,12 @@ public class CustomDate {
     }
 
     private boolean isLeapYear(int year) {
-        if (year % DIVISOR_DETERMINING_LEAP_YEAR_400 == 0) {
+        if (year % DIVISOR_LEAP_YEAR_400 == 0) {
             return true;
-        } else if (year % DIVISOR_DETERMINING_LEAP_YEAR_100 == 0) {
+        } else if (year % DIVISOR_LEAP_YEAR_100 == 0) {
             return false;
         } else {
-            return year % DIVISOR_DETERMINING_LEAP_YEAR_4 == 0;
+            return year % DIVISOR_LEAP_YEAR_4 == 0;
         }
     }
 }
