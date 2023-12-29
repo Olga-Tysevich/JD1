@@ -9,7 +9,13 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
-    public static final int NUMBER_LAST_DAY_OF_WEEK = 7;
+    public static final int MONDAY = 1;
+    public static final int TUESDAY = 2;
+    public static final int WEDNESDAY = 3;
+    public static final int THURSDAY = 4;
+    public static final int FRIDAY = 5;
+    public static final int SATURDAY = 6;
+    public static final int SUNDAY = 7;
     public static void main(String[] args) {
         /*Создайте метод с одним целочисленным параметром. Метод должен определить,
         явлется ли последняя цифра семеркой и вернуть boolean
@@ -61,15 +67,15 @@ public class Main {
     }
 
     public static void getTask(int dayOfWeekNumber) throws IllegalArgumentException {
-        if (dayOfWeekNumber > 0 && dayOfWeekNumber <= NUMBER_LAST_DAY_OF_WEEK) {
+        if (dayOfWeekNumber >= MONDAY && dayOfWeekNumber <= SUNDAY) {
             switch (dayOfWeekNumber) {
-                case 1 -> System.out.println("some plans for Monday");
-                case 2 -> System.out.println("some plans for Tuesday");
-                case 3 -> System.out.println("some plans for Wednesday");
-                case 4 -> System.out.println("some plans for Thursday");
-                case 5 -> System.out.println("some plans for Friday");
-                case 6 -> System.out.println("some plans for Saturday");
-                case 7 -> System.out.println("some plans for Sunday");
+                case MONDAY -> System.out.println("some plans for Monday");
+                case TUESDAY -> System.out.println("some plans for Tuesday");
+                case WEDNESDAY -> System.out.println("some plans for Wednesday");
+                case THURSDAY -> System.out.println("some plans for Thursday");
+                case FRIDAY -> System.out.println("some plans for Friday");
+                case SATURDAY -> System.out.println("some plans for Saturday");
+                case SUNDAY -> System.out.println("some plans for Sunday");
             }
         } else {
             throw new IllegalArgumentException("Invalid day of week number!");
