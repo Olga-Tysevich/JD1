@@ -1,4 +1,4 @@
-package org.example.lesson18reflection.man;
+package org.example.lesson18reflection.models;
 
 import java.util.Objects;
 

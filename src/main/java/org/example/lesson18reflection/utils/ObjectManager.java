@@ -1,8 +1,12 @@
-package org.example.lesson18reflection.man;
+package org.example.lesson18reflection.utils;
 
+import org.example.lesson18reflection.models.Man;
+
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 public abstract class ObjectManager {
     public static Man createMan(String name, String surname, int age) {

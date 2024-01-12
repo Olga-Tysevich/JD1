@@ -1,14 +1,16 @@
-package org.example.lesson18reflection.man;
+package org.example.lesson18reflection.utils;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class ClassInfoPrinter {
+public abstract class ClassManager {
     public static void printClassInfo(Class<?> clazz) {
         System.out.println("Class name: " + clazz.getSimpleName());
 
@@ -43,5 +45,17 @@ public abstract class ClassInfoPrinter {
         } else {
             return "without modifier";
         }
+    }
+
+    public static List<Method> getMethodsWithAnnotation(Class<?> clazz, Class<? extends Annotation> annotation) {
+        List<Method> methods = Arrays.stream(clazz.getMethods()).collect(Collectors.toList());
+        List<Method> result = new ArrayList<>();
+        methods.stream().peek(m -> m.setAccessible(true))
+                .forEach(m -> {
+                    if (m.isAnnotationPresent(annotation)) {
+                        result.add(m);
+                    }
+                });
+        return result;
     }
 }
