@@ -1,4 +1,4 @@
-package org.example.lesson19xml_json.dom;
+package org.example.lesson19xml_json.parsers;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -31,7 +31,7 @@ public class DOMPointsParser {
         }
     }
 
-    public void printPoint() {
+    public void printPoints() {
         NodeList nodeList = document.getElementsByTagName(TAG_NAME);
 
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -42,8 +42,8 @@ public class DOMPointsParser {
             String yValue = null;
             for (int j = 0; j < points.getLength(); j++) {
                 if (points.item(j) instanceof Element) {
-                    xValue = points.item(j).getNodeName().equals(TAG_CHILD_X) ? points.item(j).getFirstChild().getNodeValue() : xValue;
-                    yValue = points.item(j).getNodeName().equals(TAG_CHILD_Y) ? points.item(j).getFirstChild().getNodeValue() : yValue;
+                    xValue = points.item(j).getNodeName().equals(TAG_X) ? points.item(j).getFirstChild().getNodeValue() : xValue;
+                    yValue = points.item(j).getNodeName().equals(TAG_Y) ? points.item(j).getFirstChild().getNodeValue() : yValue;
                 }
             }
             System.out.println(xValue + UNIT + POINTS_SEPARATOR + yValue + UNIT);

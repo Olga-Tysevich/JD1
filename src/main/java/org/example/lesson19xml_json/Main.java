@@ -1,6 +1,7 @@
 package org.example.lesson19xml_json;
 
-import org.example.lesson19xml_json.dom.DOMPointsParser;
+import org.example.lesson19xml_json.parsers.DOMPointsParser;
+import org.example.lesson19xml_json.parsers.StAXPointsParser;
 
 import static org.example.lesson19xml_json.Constants.FIE_PATH;
 
@@ -19,7 +20,11 @@ public class Main {
           <pointLis>
           и выводить на экран в текстовом виде. Каждая точка должна выводится на отдельной строке в виде двух чисел,
           разделенных запятой, при этом должна выводится единица измерения. Например: 10px, 30px*/
-        DOMPointsParser DOMPointsParser =new DOMPointsParser(FIE_PATH);
-        DOMPointsParser.printPoint();
+        DOMPointsParser parser1 = new DOMPointsParser(FIE_PATH);
+        parser1.printPoints();
+        System.out.println("\n");
+
+        StAXPointsParser parser2 = new StAXPointsParser();
+        parser2.printPoints(FIE_PATH);
     }
 }
