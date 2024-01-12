@@ -18,7 +18,7 @@ public class FasterManager {
             mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
             StringWriter stringEmployee = new StringWriter();
             mapper.writeValue(stringEmployee, employee);
-            System.out.println("Employee JSON is\n" + stringEmployee);
+            System.out.println("Jackson employee:\n" + stringEmployee);
         } catch (IOException e) {
             e.printStackTrace();
         }

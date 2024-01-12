@@ -19,7 +19,8 @@ public class Main {
 
         GsonManager manager = new GsonManager();
         manager.writeEmployeeToJson(FILE_PATH, employee);
-        System.out.println(manager.readEmployee(FILE_PATH));
+        System.out.println(manager.readEmployee(FILE_PATH) + "\n");
+        System.out.println("Gson employee:\n" + manager.readEmployeeAsString(FILE_PATH));
 
         FasterManager fasterManager = new FasterManager();
         fasterManager.printEmployeeFromJson(FILE_PATH);

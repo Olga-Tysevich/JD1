@@ -32,10 +32,15 @@ public class GsonManager {
     }
 
     public Employee readEmployee(String filePath) {
-        Employee result = null;
+        String employeeString = readEmployeeAsString(filePath);
+        return gson.fromJson(employeeString, Employee.class);
+    }
+
+    public String readEmployeeAsString(String filePath) {
+        String result = null;
         try {
-            String employeeString = Files.readString(Paths.get(filePath));
-            result = gson.fromJson(employeeString, Employee.class);
+            result = Files.readString(Paths.get(filePath));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
