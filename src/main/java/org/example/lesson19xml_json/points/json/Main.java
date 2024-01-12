@@ -12,7 +12,7 @@ public class Main {
     private static final String FILE_PATH = "src\\main\\java\\org\\example\\lesson19xml_json\\points\\json\\Employee.json";
 
     public static void main(String[] args) {
-        /*Напишите программу, которая будет разбирать json файл*/
+        /*Напишите программу, которая будет разбирать json файл и выводить его в текстовом виде*/
         Employee employee = new Employee(123, "Tester", true,
                 new Address("Sryganova", "Minsk", 220000), new ArrayList<>(List.of(123456, 987654)),
                 "Manager", new ArrayList<>(List.of("Minsk", "Grodno")));
@@ -21,7 +21,7 @@ public class Main {
         manager.writeEmployeeToJson(FILE_PATH, employee);
         System.out.println(manager.readEmployee(FILE_PATH) + "\n");
         System.out.println("Gson employee:\n" + manager.readEmployeeAsString(FILE_PATH));
-//
+
         FasterManager fasterManager = new FasterManager();
         fasterManager.printEmployeeFromJson(FILE_PATH);
 
