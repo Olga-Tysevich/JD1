@@ -3,13 +3,14 @@ package org.example.lesson11files.service;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static org.example.lesson11files.service.ServiceConstants.*;
 
 public class TextManager {
 
     public long findWords(List<String> strings) {
-        return strings.stream().map(s -> Arrays.stream(s.split(NOT_WORD)).toList().size())
+        return strings.stream().map(s -> (int) Arrays.stream(s.split(NOT_WORD)).count())
                 .reduce(Integer::sum).orElse(0);
     }
 

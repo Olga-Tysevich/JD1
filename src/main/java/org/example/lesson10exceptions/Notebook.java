@@ -2,6 +2,7 @@ package org.example.lesson10exceptions;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.example.lesson10exceptions.Constants.*;
 
@@ -24,7 +25,7 @@ public class Notebook {
     }
 
     public List<Note> findNotes(String title) throws NotebookException {
-        List<Note> result = notes.stream().filter(n -> n.getTitle().contains(title)).toList();
+        List<Note> result = notes.stream().filter(n -> n.getTitle().contains(title)).collect(Collectors.toList());
         if (result.size() == 0) {
             throw new NotebookException(NOTHING_FOUND_EXCEPTION);
         } else {

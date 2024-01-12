@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -23,7 +24,7 @@ public class StringFileGenerator implements Callable<List<String>> {
                 .limit(NUMBER_OF_FILES)
                 .peek(this::writeFile)
                 .map(File::getName)
-                .toList();
+                .collect(Collectors.toList());
         Thread.sleep(new Random().nextInt(MAX_SLEEP_TIME) + 1000);
         return fileNames;
     }

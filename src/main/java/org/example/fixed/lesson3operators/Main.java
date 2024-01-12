@@ -69,13 +69,13 @@ public class Main {
     public static void getTask(int dayOfWeekNumber) throws IllegalArgumentException {
         if (dayOfWeekNumber >= MONDAY && dayOfWeekNumber <= SUNDAY) {
             switch (dayOfWeekNumber) {
-                case MONDAY -> System.out.println("some plans for Monday");
-                case TUESDAY -> System.out.println("some plans for Tuesday");
-                case WEDNESDAY -> System.out.println("some plans for Wednesday");
-                case THURSDAY -> System.out.println("some plans for Thursday");
-                case FRIDAY -> System.out.println("some plans for Friday");
-                case SATURDAY -> System.out.println("some plans for Saturday");
-                case SUNDAY -> System.out.println("some plans for Sunday");
+                case MONDAY: System.out.println("some plans for Monday"); break;
+                case TUESDAY: System.out.println("some plans for Tuesday"); break;
+                case WEDNESDAY: System.out.println("some plans for Wednesday"); break;
+                case THURSDAY: System.out.println("some plans for Thursday"); break;
+                case FRIDAY: System.out.println("some plans for Friday"); break;
+                case SATURDAY: System.out.println("some plans for Saturday"); break;
+                case SUNDAY: System.out.println("some plans for Sunday"); break;
             }
         } else {
             throw new IllegalArgumentException("Invalid day of week number!");

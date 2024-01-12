@@ -4,22 +4,30 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Logger {
     private static volatile Logger instance;
-    private final File log;
+    private static final String LINE_SEPARATOR = "\n";
+    private static final String TEXT_BEFORE_MESSAGE = ", error: ";
+    private static final String DATE_FORMAT = "dd.MM.yyyy HH:mm:ss";
+    private final File LOG;
+
 
     private Logger(String logPath) {
-        this.log = new File(logPath);
+        this.LOG = new File(logPath);
     }
 
-    public boolean logBug(String bugMessage) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(log, true))){
-
-        } catch (IOException e) {
-            e.printStackTrace();
+    public boolean logErrorMessages(String errorMessage) {
+        synchronized (LOG) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(LOG, true))) {
+                writer.write(LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_FORMAT)) + TEXT_BEFORE_MESSAGE + errorMessage + LINE_SEPARATOR);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return false;
         }
-        return false;
     }
 
     public static Logger getInstance(String logPath) {

@@ -20,7 +20,8 @@ public class Writer {
          * Вывести ход программы на экран с указанием имени потока, который выполняет работу*/
         Writer writer = new Writer();
 
-        try (ExecutorService service = Executors.newFixedThreadPool(NUMBER_OF_THREADS)) {
+        try {
+            ExecutorService service = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
             for (int i = 0; i < NUMBER_OF_TASKS; i++) {
                 writer.writeToFile(service.submit(() -> {
                     String str = "Hello world " + LocalTime.now();
@@ -28,6 +29,7 @@ public class Writer {
                     return str;
                 }).get());
             }
+        service.shutdown();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }

@@ -4,6 +4,7 @@ import org.example.lesson11files.person.Names;
 import org.example.lesson11files.person.Surnames;
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class PersonDemo {
@@ -30,7 +31,7 @@ public class PersonDemo {
                         .thenComparing(Person::getName))
                 .limit(REQUIRED_NUMBER_OF_PERSONS)
                 .map(Person::getSurname)
-                .toList();
+                .collect(Collectors.toList());
 
         System.out.println(surnames);
     }

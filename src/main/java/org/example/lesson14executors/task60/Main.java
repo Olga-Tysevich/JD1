@@ -21,7 +21,7 @@ public class Main {
         for (int i = 0; i < NUMBER_OF_TASKS; i++) {
             strings.add(service.submit(new Generator()));
         }
-        service.close();
+        service.shutdown();
 
         try {
             for (Future<String> f : strings) {

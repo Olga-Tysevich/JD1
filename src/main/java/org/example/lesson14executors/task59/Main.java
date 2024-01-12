@@ -22,7 +22,7 @@ public class Main {
         for (int i = 0; i < NUMBER_OF_TASKS; i++) {
             fileNames.add(service.submit(new StringFileGenerator()));
         }
-        service.close();
+        service.shutdown();
 
         try {
             for (Future<List<String>> f : fileNames) {

@@ -3,6 +3,7 @@ package org.example.lesson9collections;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Task4 {
     public static final String ANY_WORD = "[a-zA-Z]+|[а-яА-я]+";
@@ -35,7 +36,7 @@ public class Task4 {
 
 
         Map<String, Integer> wordsMap2 = new LinkedHashMap<>();
-        Arrays.stream(words).forEach(w -> wordsMap2.put(w, Collections.frequency(Arrays.stream(words).toList(), w)));
+        Arrays.stream(words).forEach(w -> wordsMap2.put(w, Collections.frequency(Arrays.stream(words).collect(Collectors.toList()), w)));
         System.out.println(wordsMap2);
     }
 

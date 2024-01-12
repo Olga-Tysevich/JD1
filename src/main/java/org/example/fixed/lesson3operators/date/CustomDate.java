@@ -26,15 +26,27 @@ public class CustomDate {
     public void printNextDay() {
 
         switch (month) {
-            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> changeDay(LAST_DAY_OF_MONTH_31);
-            case FEBRUARY -> {
+            case JANUARY:
+            case MARCH:
+            case MAY:
+            case JULY:
+            case AUGUST:
+            case OCTOBER:
+            case DECEMBER:
+                changeDay(LAST_DAY_OF_MONTH_31); break;
+            case FEBRUARY: {
                 if (isLeapYear(year)) {
                     changeDay(LAST_DAY_OF_FEBRUARY_LEAP_YEAR);
                 } else {
                     changeDay(LAST_DAY_OF_FEBRUARY);
                 }
+                break;
             }
-            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> changeDay(LAST_DAY_OF_MONTH_30);
+            case APRIL:
+            case JUNE:
+            case SEPTEMBER:
+            case NOVEMBER:
+                changeDay(LAST_DAY_OF_MONTH_30); break;
         }
     }
 
@@ -48,29 +60,35 @@ public class CustomDate {
             month = FIRST_MONTH_OF_YEAR;
             year++;
         } else {
-           day++;
+            day++;
         }
         System.out.printf(DATE_PATTERN, day, month, year);
     }
 
     private boolean checkDay(int day, int month, int year) {
         switch (month) {
-            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> {
+            case JANUARY:
+            case MARCH:
+            case MAY:
+            case JULY:
+            case AUGUST:
+            case OCTOBER:
+            case DECEMBER:
                 return day >= FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_MONTH_31;
-            }
-            case FEBRUARY -> {
+            case FEBRUARY: {
                 if (isLeapYear(year)) {
                     return day >= FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_FEBRUARY_LEAP_YEAR;
                 } else {
                     return day >= FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_FEBRUARY;
                 }
             }
-            case APRIL, JUNE, SEPTEMBER, NOVEMBER -> {
+            case APRIL:
+            case JUNE:
+            case SEPTEMBER:
+            case NOVEMBER:
                 return day > FIRST_DAY_OF_MONTH && day <= LAST_DAY_OF_MONTH_30;
-            }
-            default -> {
+            default:
                 return false;
-            }
         }
     }
 

@@ -1,6 +1,7 @@
 package org.example.lesson9collections;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Task1 {
     public static void main(String[] args) {
@@ -24,16 +25,16 @@ public class Task1 {
         System.out.println("\n");
 
 
-        List<Integer> marks2 = new ArrayList<>(new Random().ints(20, 1, 6).boxed().toList());
+        List<Integer> marks2 = new Random().ints(20, 1, 6).boxed().collect(Collectors.toList());
 
         marks2.forEach(m -> System.out.print(m + ", "));
         System.out.println();
-        marks2 = marks2.stream().filter(m -> m > 3).toList();
+        marks2 = marks2.stream().filter(m -> m > 3).collect(Collectors.toList());
         marks2.forEach(m -> System.out.print(m + ", "));
         System.out.println("\n");
 
 
-        List<Integer> mark3 = new ArrayList<>(new Random().ints(20, 1, 11).boxed().toList());
+        List<Integer> mark3 = new Random().ints(20, 1, 11).boxed().collect(Collectors.toList());
         mark3.forEach(m -> System.out.print(m + ", "));
         System.out.println();
         mark3.removeIf(m -> m < 5);

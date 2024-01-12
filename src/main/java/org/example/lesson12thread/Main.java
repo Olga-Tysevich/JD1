@@ -2,6 +2,7 @@ package org.example.lesson12thread;
 
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Main {
     public static final int LIST_SIZE = 10;
@@ -13,7 +14,7 @@ public class Main {
         коллекции из 10 случайных целых чисел и выводит на экран*/
         List<Integer> numbers;
         for (int i = 0; i < 10; i++) {
-            numbers = new Random().ints(LIST_SIZE, 0, 101).boxed().toList();
+            numbers = new Random().ints(LIST_SIZE, 0, 101).boxed().collect(Collectors.toList());
             AverageThread averageThread = new AverageThread(numbers);
             averageThread.start();
         }

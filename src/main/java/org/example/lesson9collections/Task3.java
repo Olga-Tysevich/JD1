@@ -4,12 +4,13 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Task3 {
     public static void main(String[] args) {
         /*Создать список оценок учеников с помощью ArrayList, заполнить случайными оценками.
         * Найти самую высокую с использованием итератора*/
-        List<Integer> marks = new LinkedList<>(new Random().ints(5, 1, 6).boxed().toList());
+        List<Integer> marks = new Random().ints(5, 1, 6).boxed().collect(Collectors.toCollection(LinkedList::new));
         marks.forEach(m -> System.out.print(m + ", "));
         Iterator<Integer> iterator = marks.listIterator();
         int max = marks.get(0);

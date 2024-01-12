@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.example.lesson11files.files.Constants.*;
@@ -42,12 +43,12 @@ public class FilesDemo {
         List<Double> numbers = textManager.findNumbers(reader.readFile(file));
         System.out.println(numbers + "\n");
         System.out.println("Sum: " + numbers.stream().reduce(Double::sum).orElse(0D));
-        System.out.println("\n" + numbers.stream().distinct().toList());
+        System.out.println("\n" + numbers.stream().distinct().collect(Collectors.toList()));
 
         /*50) Записать с помощью Java в двоичный файл 20 случайных чисел.
          * Прочитать записанный файл, вывести на экран числа и их среднее арифметическое*/
         System.out.println();
-        List<Integer> source = new ArrayList<>(new Random().ints(20, 0, 151).boxed().toList());
+        List<Integer> source = new Random().ints(20, 0, 151).boxed().collect(Collectors.toList());
         System.out.println(source);
         writer.writeIntToBinaryFile(source, BINARY_FILE, false);
         source = reader.readIntFromBinaryFile(BINARY_FILE);
@@ -61,7 +62,7 @@ public class FilesDemo {
         List<String> fileNames = new ArrayList<>();
         IntStream.range(1, 6).forEach(i -> fileNames.add(DIRECTORY_PATH + FILE_NAME.replace(FILE_NUMBER, String.valueOf(i))));
 
-        fileNames.forEach(f -> writer.writeToFile(new Random().ints(10, 0, 51).boxed().toList(), f, false));
+        fileNames.forEach(f -> writer.writeToFile(new Random().ints(10, 0, 51).boxed().collect(Collectors.toList()), f, false));
 
         fileNames.forEach(f -> writer.writeToFile(reader.readFile(new File(f)), DIRECTORY_PATH + MERGED_FILE_NAME, true));
 
