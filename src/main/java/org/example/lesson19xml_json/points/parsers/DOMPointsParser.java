@@ -1,4 +1,4 @@
-package org.example.lesson19xml_json.parsers;
+package org.example.lesson19xml_json.points.parsers;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -12,7 +12,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-import static org.example.lesson19xml_json.Constants.*;
+import static org.example.lesson19xml_json.points.Constants.*;
 
 public class DOMPointsParser {
     private DocumentBuilderFactory factory;

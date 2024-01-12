@@ -1,4 +1,4 @@
-package org.example.lesson19xml_json.parsers;
+package org.example.lesson19xml_json.points.parsers;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -6,7 +6,7 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-import static org.example.lesson19xml_json.Constants.*;
+import static org.example.lesson19xml_json.points.Constants.*;
 
 public class StAXPointsParser {
     private XMLInputFactory factory;

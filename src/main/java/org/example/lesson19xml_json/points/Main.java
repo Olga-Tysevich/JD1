@@ -1,9 +1,9 @@
-package org.example.lesson19xml_json;
+package org.example.lesson19xml_json.points;
 
-import org.example.lesson19xml_json.parsers.DOMPointsParser;
-import org.example.lesson19xml_json.parsers.StAXPointsParser;
+import org.example.lesson19xml_json.points.parsers.DOMPointsParser;
+import org.example.lesson19xml_json.points.parsers.StAXPointsParser;
 
-import static org.example.lesson19xml_json.Constants.FIE_PATH;
+import static org.example.lesson19xml_json.points.Constants.FIE_PATH;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,6 +24,7 @@ public class Main {
         parser1.printPoints();
         System.out.println("\n");
 
+        /*Напишите программу, которая будет разбирать xml файл, сделаный в предыдущем задании с помощью StAX*/
         StAXPointsParser parser2 = new StAXPointsParser();
         parser2.printPoints(FIE_PATH);
     }
