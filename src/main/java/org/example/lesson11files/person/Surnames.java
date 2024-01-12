@@ -1,14 +1,14 @@
 package org.example.lesson11files.person;
 
 public enum Surnames {
-    Smith,
-    Jones,
-    Williams,
-    Brown,
-    Taylor,
-    Davies,
-    Evans,
-    Johnson,
-    Roberts,
-    Walker
+    SMITH,
+    JONES,
+    WILLIAMS,
+    BROWN,
+    TAYLOR,
+    DAVIES,
+    EVANS,
+    JOHNSON,
+    ROBERTS,
+    WALKER
 }

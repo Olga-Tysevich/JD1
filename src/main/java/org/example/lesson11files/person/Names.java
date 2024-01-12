@@ -1,14 +1,15 @@
 package org.example.lesson11files.person;
 
 public enum Names {
-    Demi,
-    Dennis,
-    Mindy,
-    Laren,
-    Luci,
-    Melinda,
-    Velma,
-    Vicary,
-    Timmy,
-    Sharon
+    DEMI,
+    DENNIS,
+    MINDY,
+    LAREN,
+    LUCI,
+    MELINDA,
+    VELMA,
+    VICARY,
+    TIMMY,
+    SHARON
+
 }
