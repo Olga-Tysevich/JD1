@@ -6,7 +6,6 @@ import org.example.lesson18reflection.models.Man;
 import org.example.lesson18reflection.utils.ObjectManager;
 import org.example.lesson18reflection.utils.Printer;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
