@@ -10,14 +10,14 @@ public class Main {
     public static void main(String[] args) {
         /*Создайте простейший сервис с методом, который выводит на экран текщую дату.
          * Сделайте его Singleton и используйте в основном теле программы*/
-//        DateSingleton singleton = DateSingleton.getDateSingleton();
-//        singleton.printCurrentDate();
+        DateSingleton singleton = DateSingleton.getDateSingleton();
+        singleton.printCurrentDate();
 
         /*Создайте класс Person с полями имя, фамилия, год рождения.
          * Реализуйте у этого класса паттерн Строитель. Введите с клавиатуры и заполните объект
          * класса Person с помощью паттерна Строитель*/
-//        Person person = new PersonCreator(new SimplePersonBuilder()).createPerson();
-//        System.out.println(person);
+        Person person = new PersonCreator(new SimplePersonBuilder()).createPerson();
+        System.out.println(person);
 
         /*Создайте простейший логгер, выводящий сообщения об ошибках в текстовый файл.
         * Объект логгера должен быть создан с помощью Singleton. У объекта должен быть обязательным один метод,
