@@ -2,7 +2,7 @@ package org.example.lesson19xml_json.points.json;
 
 import org.example.lesson19xml_json.points.json.model.Address;
 import org.example.lesson19xml_json.points.json.model.Employee;
-import org.example.lesson19xml_json.points.json.utils.FasterManager;
+import org.example.lesson19xml_json.points.json.utils.JacksonManager;
 import org.example.lesson19xml_json.points.json.utils.GsonManager;
 
 import java.util.ArrayList;
@@ -22,8 +22,8 @@ public class Main {
         System.out.println(manager.readEmployee(FILE_PATH) + "\n");
         System.out.println("Gson employee:\n" + manager.readEmployeeAsString(FILE_PATH));
 
-        FasterManager fasterManager = new FasterManager();
-        fasterManager.printEmployeeFromJson(FILE_PATH);
+        JacksonManager jacksonManager = new JacksonManager();
+        jacksonManager.printEmployeeFromJson(FILE_PATH);
 
     }
 }

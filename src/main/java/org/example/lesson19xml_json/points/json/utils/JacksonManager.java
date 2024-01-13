@@ -10,7 +10,7 @@ import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FasterManager {
+public class JacksonManager {
     public void printEmployeeFromJson(String filePath) {
         try {
             byte[] jsonData = Files.readAllBytes(Paths.get(filePath));
