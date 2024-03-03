@@ -42,6 +42,7 @@ public class Main {
         Определите сумму элементов массива, расположенных между мин и макс значениями. Если их несколько, то необходимо
         взять максимальное значение разницы индексов между максимальным и минимальным значениями*/
         int[] array4 = new int[ONE_D_ARRAY_SIZE];
+//        int[] array4 = {9,2,9,1,5,6,7,1,6,1};
         fillArray(array4);
         int minEl = array4[0];
         int minPos = 0;
@@ -58,9 +59,9 @@ public class Main {
                 minPos = i;
             }
             if (maxEl == array4[i]) {
-                maxPos = Math.abs(maxPos - minPos) < (i - minPos) ? i : maxPos;
+                maxPos = Math.abs(maxPos - minPos) < Math.abs(i - minPos) ? i : maxPos;
             } else if (minEl == array4[i]) {
-                minPos = Math.abs(maxPos - minPos) < (maxPos - i) ? i : minPos;
+                minPos = Math.abs(maxPos - minPos) < Math.abs(maxPos - i) ? i : minPos;
             }
         }
         int sumOfNumbers = 0;
