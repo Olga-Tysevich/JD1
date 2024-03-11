@@ -1,4 +1,4 @@
-package org.example.fixed.lesson5arrays;
+package org.example.lesson5arrays;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -6,6 +6,7 @@ import java.util.Random;
 public class Main {
     public static final int ONE_D_ARRAY_SIZE = 10;
     public static final int MATRIX_SIZE = 5;
+
     public static void main(String[] args) {
         /*Создайте переменную для массива из 10 элементов. Заполните его произвольными значениями целочисленного типа и выведите последний элемент
         массива на экран*/
@@ -42,7 +43,6 @@ public class Main {
         Определите сумму элементов массива, расположенных между мин и макс значениями. Если их несколько, то необходимо
         взять максимальное значение разницы индексов между максимальным и минимальным значениями*/
         int[] array4 = new int[ONE_D_ARRAY_SIZE];
-//        int[] array4 = {9,2,9,1,5,6,7,1,6,1};
         fillArray(array4);
         int minEl = array4[0];
         int minPos = 0;
@@ -64,11 +64,12 @@ public class Main {
                 minPos = Math.abs(maxPos - minPos) < Math.abs(maxPos - i) ? i : minPos;
             }
         }
+
         int sumOfNumbers = 0;
         for (int i = Math.min(minPos, maxPos) + 1; i < Math.max(minPos, maxPos); i++) {
             sumOfNumbers += array4[i];
         }
-        System.out.println("\nMin pos: " + minPos + ", max pos: " + maxPos + ", sum: " + sumOfNumbers);
+        System.out.println("\n" + Arrays.toString(array4) + "\nMin pos: " + minPos + ", max pos: " + maxPos + ", sum: " + sumOfNumbers + "\n");
 
         /*Создайте переменную для массива из 10 элементов. Заполните его произвольными значениями целочисленного типа.
         Выведите на экран, переверните и снова выведите на экран (новый массив не создавать)*/

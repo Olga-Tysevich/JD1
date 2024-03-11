@@ -1,4 +1,4 @@
-package org.example.fixed.lesson2variables;
+package org.example.lesson2variables;
 
 
 public class Main {

@@ -1,4 +1,4 @@
-package org.example.fixed.lesson3operators.figures;
+package org.example.lesson3operators.figures;
 
 public class Circle extends Shape {
     private final int radius;

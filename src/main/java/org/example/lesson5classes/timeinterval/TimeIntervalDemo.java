@@ -1,4 +1,4 @@
-package org.example.verified.lesson5classes.timeinterval;
+package org.example.lesson5classes.timeinterval;
 
 public class TimeIntervalDemo {
     public static void main(String[] args) {

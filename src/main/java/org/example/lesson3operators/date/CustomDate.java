@@ -1,8 +1,8 @@
-package org.example.fixed.lesson3operators.date;
+package org.example.lesson3operators.date;
 
 import java.time.DateTimeException;
 
-import static org.example.fixed.lesson3operators.date.Constants.*;
+import static org.example.lesson3operators.date.Constants.*;
 
 public class CustomDate {
     private final int day;

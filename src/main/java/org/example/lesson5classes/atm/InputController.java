@@ -1,4 +1,4 @@
-package org.example.verified.lesson5classes.atm;
+package org.example.lesson5classes.atm;
 
 import java.util.Scanner;
 

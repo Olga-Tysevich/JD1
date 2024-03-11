@@ -1,8 +1,8 @@
-package org.example.fixed.lesson3operators;
+package org.example.lesson3operators;
 
-import org.example.fixed.lesson3operators.date.CustomDate;
-import org.example.fixed.lesson3operators.figures.Circle;
-import org.example.fixed.lesson3operators.figures.Rectangle;
+import org.example.lesson3operators.date.CustomDate;
+import org.example.lesson3operators.figures.Circle;
+import org.example.lesson3operators.figures.Rectangle;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.example.fixed.lesson3operators.figures;
+package org.example.lesson3operators.figures;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;

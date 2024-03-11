@@ -1,4 +1,4 @@
-package org.example.fixed.lesson3operators.date;
+package org.example.lesson3operators.date;
 
 public class Constants {
     protected static final String INVALID_DAY_MESSAGE = "Incorrect day specified!";

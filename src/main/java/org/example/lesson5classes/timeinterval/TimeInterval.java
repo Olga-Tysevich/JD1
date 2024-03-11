@@ -1,4 +1,4 @@
-package org.example.verified.lesson5classes.timeinterval;
+package org.example.lesson5classes.timeinterval;
 
 /*Создать класс описывающий промежуток времени. Сам промежуток должен задаваться тремя св-ми:
  * сек, мин, часы. Сделать методы для получения полного кол-ва секунд, сравнения двух объектов.

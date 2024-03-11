@@ -1,4 +1,4 @@
-package org.example.verified.lesson6string;
+package org.example.lesson6string;
 
 import java.util.ArrayList;
 import java.util.List;

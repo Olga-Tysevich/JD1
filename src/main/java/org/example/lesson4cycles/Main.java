@@ -1,4 +1,4 @@
-package org.example.fixed.lesson4cycles;
+package org.example.lesson4cycles;
 
 import java.math.BigInteger;
 
@@ -31,13 +31,14 @@ public class Main {
             number /= 10;
         } while (number != 0);
 
+
         System.out.println("Sum of digits of a number 7893823445 = " + sumOfDigits);
 
         /* Найти среди чисел от 50 до 70 второе простое число и завершить цикл*/
         boolean isSimple = true;
         int simpleNumber = 0;
         int counterOfSimpleNumbers = 0;
-        for (int i = 50; i <= 70; i++) {
+        for (int i = 60; i <= 70; i++) {
             isSimple = true;
             for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
@@ -85,6 +86,13 @@ public class Main {
             }
             rankInNumber /= 10;
         }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        while (intNumber != 0) {
+            stringBuilder.insert(0, intNumber % 1000 + " ");
+            intNumber = intNumber / 1000;
+        }
+        System.out.println(stringBuilder.toString());
     }
 
     public static int calculateFactorial(int number) {

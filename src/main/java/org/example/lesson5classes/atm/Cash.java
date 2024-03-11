@@ -1,12 +1,10 @@
-package org.example.verified.lesson5classes.atm;
+package org.example.lesson5classes.atm;
 
 public enum Cash {
-    DENOMINATION_20(0, 20), DENOMINATION_50(1, 50), DENOMINATION_100(2, 100);
-    private int denIndex;
+    DENOMINATION_100(100), DENOMINATION_50(50),DENOMINATION_20(20);
     private int value;
 
-    Cash(int denIndex, int value) {
-        this.denIndex = denIndex;
+    Cash(int value) {
         this.value = value;
     }
 
@@ -17,4 +15,7 @@ public enum Cash {
     public int getValue() {
         return value;
     }
+
+
+
 }

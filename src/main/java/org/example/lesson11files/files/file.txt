@@ -2,5 +2,5 @@ Researchers who flipped coins 350,757 times have confirmed that the chance of la
 If you flip a coin, the odds of getting heads or tails are an equal 50 per cent chance – right? While this is what statistics textbooks will tell you,
 there is increasing evidence that it isn’t quite true in the real world.
 In 2007, researchers theorised that when a coin is flipped, the flipper’s thumb imparts a slight wobble to it,
-causing it to spend more time with one side facing upwards while in the air and making it more likely to land showing that side.
-They predicted that a coin should land showing the same side that was facing up when flipped approximately 51 per cent of the time.
+causing it to spend more lessons with one side facing upwards while in the air and making it more likely to land showing that side.
+They predicted that a coin should land showing the same side that was facing up when flipped approximately 51 per cent of the lessons.
